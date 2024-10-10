@@ -3,21 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgba(10, 22, 15, 1);
+  --text: #e5f8ed;
+  --accent: rgba(102, 169, 186, 1);
+
+  --body-font-size: 12px;
+  --body-font-style: normal;
+  --body-font-weight: 400;
+  --body-letter-spacing: 0px;
+  --body-line-height: normal;
+  --heading-font-size: 12px;
+  --heading-font-style: normal;
+  --heading-font-weight: 400;
+  --heading-letter-spacing: 0px;
+  --heading-line-height: normal;
+
+  --font-heading: var(--font-museoModerno);
+  --font-body: var(--font-cairo)
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --secondary: rgba(33, 75, 121, 1);
+    --background: rgba(10, 22, 15, 1);
+    --text: rgba(229, 248, 237, 1);
+    --accent: rgba(102, 169, 186, 1);
   }
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: var(--font-heading);
+
 }
 
 @layer utilities {

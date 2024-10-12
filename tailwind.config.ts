@@ -10,7 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
         'primary': {
           '50': '#f0f9f3',
           '100': '#dbf0e1',

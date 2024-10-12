@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --background: rgba(10, 22, 15, 1);
-  --text: #e5f8ed;
-  --accent: rgba(102, 169, 186, 1);
-
   --body-font-size: 12px;
   --body-font-style: normal;
   --body-font-weight: 400;
@@ -23,18 +19,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --secondary: rgba(33, 75, 121, 1);
-    --background: rgba(10, 22, 15, 1);
-    --text: rgba(229, 248, 237, 1);
-    --accent: rgba(102, 169, 186, 1);
-  }
-}
-
-body {
-  color: var(--text);
-  background: var(--background);
-  font-family: var(--font-body);
+  :root {}
 }
 
 h1,

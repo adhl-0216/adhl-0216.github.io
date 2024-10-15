@@ -1,22 +1,22 @@
 import Logo from "@/components/Logo"
 import NavItems from "@/components/NavItems";
-import { GitHubIcon, LinkedInIcon, GmailIcon } from "@/components/Icons"
+import { GitHubIcon, LinkedInIcon, GmailIcon } from "@/components/IconButtons"
 
 
 export default function Footer() {
     return (
         <footer className="p-4 text-primary-700 fill-primary-700 ">
-            <div className="grid grid-cols-2 grid-rows-2 px-8 lg:flex lg:justify-center lg:gap-80 items-center">
-                <div className="row-span-1  lg:flex lg:justify-center lg:order-2 ">
+            <div className="grid grid-cols-2 grid-rows-2 px-8 lg:grid-cols-3 lg:grid-rows-1 items-center">
+                <div className="row-span-1  lg:flex lg:justify-center lg:col-start-2 ">
                     <Logo />
                 </div>
-                <div className="col-start-1 row-span-1 flex flex-row gap-2 justify-start lg:justify-center lg:order-1 ">
+                <div className="col-start-1 lg:row-start-1 row-span-1 flex flex-row gap-2 justify-start lg:justify-center lg:col-start-1 ">
                     <LinkedInIcon className="h-8 w-8 lg:h-12 lg:w-12" />
                     <GitHubIcon className="h-8 w-8 lg:h-12 lg:w-12" />
                     <GmailIcon className="h-8 w-8 lg:h-12 lg:w-12" />
                 </div>
 
-                <div className="col-start-3 row-start-1 row-span-2 flex flex-col justify-center items-center lg:order-3 lg:text-xl">
+                <div className="col-start-3 row-start-1 row-span-2 text-xl flex flex-col justify-center items-center lg:col-start-3 lg:row-span-1 ">
                     <NavItems />
                 </div>
             </div>

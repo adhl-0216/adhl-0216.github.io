@@ -34,7 +34,7 @@ export default function ContactContainer() {
 
     return (
         <div className="px-6 flex justify-center items-center h-dvh" id="contact-container">
-            <form ref={form} onSubmit={handleSubmit} className="gap-8 flex flex-col">
+            <form ref={form} onSubmit={handleSubmit} className="gap-6 flex flex-col">
                 <h2 className="text-5xl font-bold leading-10">Contact Me For Anything!</h2>
                 <Input
                     label="Email"

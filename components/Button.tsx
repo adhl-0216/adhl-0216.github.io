@@ -10,7 +10,7 @@ interface Props {
 
 export default function Button({ href = "#", children, type = "button" }: Props) {
     return (
-        <Link href={href} type={type} className="grow bg-primary-400 p-4 px-8 rounded-lg font-museoModerno font-bold text-md text-center">
+        <Link href={href} type={type} className="grow bg-primary-400 py-4 px-6 lg:px-8 rounded-lg font-museoModerno font-bold text-md lg:text-xl text-center">
             {children}
         </Link>
     )

@@ -10,10 +10,8 @@ interface Props {
 
 export default function Input(props: Props) {
     return (
-        <label className="text-2xl font-normal flex flex-col">{props.label}
-            <div className="self-stretch h-12 lg:px-4 lg:py-3.5 bg-white rounded-lg border border-zinc-300 justify-start items-center inline-flex">
-                <input className="grow shrink basis-0 text-xl font-normal text-text-400" placeholder={props.placeholder} />
-            </div>
+        <label className="flex flex-col gap-2 text-2xl font-normal">{props.label}
+            <input className="self-stretch h-12 p-4 bg-white rounded-lg border border-zinc-300 justify-start items-center grow shrink text-lg font-normal text-text-400" placeholder={props.placeholder} />
         </label>
     )
 }

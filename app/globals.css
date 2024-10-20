@@ -33,6 +33,29 @@ h6 {
 
 }
 
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(90deg, #f3ec78, #40879a, #d7f4e2);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-animation 3s ease infinite;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

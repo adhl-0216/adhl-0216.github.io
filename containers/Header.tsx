@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Logo from "@/components/Logo";
 import NavItems from "@/components/NavItems";
 import { useRef, useState, useEffect } from "react";
@@ -7,9 +7,8 @@ export default function Header() {
     const navItemsRef = useRef<HTMLDivElement | null>(null);
     const headerRef = useRef<HTMLDivElement | null>(null);
     const [showHeader, setShowHeader] = useState(true);
-    const isNavOpen = useRef(false)
+    const isNavOpen = useRef(false);
     const lastScrollY = useRef(0);
-
 
     function toggleNavItems() {
         const header = headerRef.current!;
@@ -22,22 +21,20 @@ export default function Header() {
         }
 
         navItemsRef.current!.classList.toggle("hidden");
-        isNavOpen.current = !isNavOpen.current
+        isNavOpen.current = !isNavOpen.current;
     }
 
-
     function handleCollapseNav(event: MouseEvent | TouchEvent) {
-        if (navItemsRef.current && !navItemsRef.current.contains(event.target as Node) && !headerRef.current?.contains(event.target as Node)) {
+        if (
+            navItemsRef.current &&
+            !navItemsRef.current.contains(event.target as Node) &&
+            !headerRef.current?.contains(event.target as Node)
+        ) {
             if (!navItemsRef.current.classList.contains("hidden")) {
                 toggleNavItems();
             }
         }
-    };
-
-    function handleClick() {
-        toggleNavItems()
     }
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -72,15 +69,16 @@ export default function Header() {
     });
 
     return (
-        <header >
+        <header>
             <nav>
-                <div ref={headerRef}
-                    className={`fixed w-full flex flex-wrap lg:flex-nowrap justify-between items-center px-6 lg:px-14 py-6 bg-primary-950 text-primary-100  transition-transform duration-500 ease-in-out ${showHeader ? "translate-y-0" : "-translate-y-full"
+                <div
+                    ref={headerRef}
+                    className={`fixed w-full flex flex-wrap lg:flex-nowrap justify-between items-center px-6 lg:px-14 py-6 bg-primary-950 text-primary-100 transition-transform duration-500 ease-in-out ${showHeader ? "translate-y-0" : "-translate-y-full"
                         }`}
                 >
                     <Logo />
                     <button
-                        onClick={handleClick}
+                        onClick={toggleNavItems}
                         type="button"
                         className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-expanded="false"

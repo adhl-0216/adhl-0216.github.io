@@ -33,13 +33,14 @@ export default function ContactContainer() {
     };
 
     return (
-        <div className="px-6 flex justify-center items-center h-dvh" id="contact-container">
-            <form ref={form} onSubmit={handleSubmit} className="gap-6 flex flex-col">
-                <h2 className="text-5xl font-bold leading-10">Contact Me For Anything!</h2>
+        <section className="flex justify-center items-center min-h-dvh py-4" id="contact-container">
+            <form ref={form} onSubmit={handleSubmit} className="gap-4 flex flex-col">
+                <h2 className="text-4xl lg:text-5xl font-bold leading-10">Contact Me For Anything!</h2>
                 <Input
                     label="Email"
                     placeholder="stranger@mail.com"
                     name="user_email"
+                    type="email"
                 />
                 <Input
                     label="Subject"
@@ -53,6 +54,6 @@ export default function ContactContainer() {
                 />
                 <Button type="submit">Send</Button>
             </form>
-        </div>
+        </section>
     );
 }

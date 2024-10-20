@@ -19,6 +19,9 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "ADHL",
   description: "Professional Portfolio of Adrian Han Lim Oah",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({
@@ -32,9 +35,9 @@ export default function RootLayout({
       lang="en"
       className={`${museoModerno.variable} ${cairo.variable} scroll-smooth`}
     >
-      <body className="font-cairo text-text-50 bg-primary-950">
+      <body className="flex flex-col font-cairo text-text-50 bg-primary-950">
         <Header />
-        <main className="p-8 lg:p-6">
+        <main className="px-12 lg:px-32">
           {children}
         </main>
         <Footer />

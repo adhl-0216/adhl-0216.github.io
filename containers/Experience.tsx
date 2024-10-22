@@ -12,7 +12,7 @@ export default function ExperienceContainer() {
                         <Image src={jriLogo} alt="JRI-America" width={256} className="object-contain" ></Image>
                     </div>
                     <div>
-                        <span className="font-bold text-2xl text-wrap">JRI-America, a subsidiary of Sumitomo Mitsui Banking Corporation (SMBC)</span>
+                        <span className="font-bold text-2xl text-wrap">JRI-America, a subsidiary of <div className="italic">Sumitomo Mitsui Banking Corporation (SMBC)</div></span>
                         <p className="text-xl font-bold text-text-200 mb-2">SOC Automation & Cyber Monitoring Response Intern</p>
                         <div className="tags"></div>
                         <ul className="italic">

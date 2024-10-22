@@ -5,21 +5,25 @@ import Button from "@/components/Button";
 import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
 import Modal from "@/components/Modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactContainer() {
     const form = useRef<HTMLFormElement | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (form.current) {
             const formData = new FormData(form.current);
-            console.log(formData)
             const user_email = formData.get('user_email') as string;
             const subject = formData.get('subject') as string;
             const message = formData.get('message') as string;
+
+            setIsSubmitting(true);  // Disable the button and show spinner
 
             emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
@@ -31,11 +35,14 @@ export default function ContactContainer() {
                 .then(() => {
                     setModalMessage('Message sent successfully!');
                     setModalVisible(true);
-                    form.current!.reset()
+                    form.current!.reset();
                 })
                 .catch(() => {
                     setModalMessage('Failed to send message. Please try again.');
                     setModalVisible(true);
+                })
+                .finally(() => {
+                    setIsSubmitting(false);  // Re-enable the button and hide spinner
                 });
         }
     };
@@ -67,7 +74,9 @@ export default function ContactContainer() {
                     name="message"
                     required
                 />
-                <Button type="submit">Send</Button>
+                <Button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? <FontAwesomeIcon icon={faSpinner} spin /> : 'Send'}
+                </Button>
             </form>
             {modalVisible && <Modal message={modalMessage} onClose={closeModal} />}
         </section>

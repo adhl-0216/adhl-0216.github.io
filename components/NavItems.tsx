@@ -32,7 +32,7 @@ export default function NavItems({ className }: Props) {
         <ul className={className}>
             {navLinks.map(({ name, href }) => {
                 return (
-                    <li key={name}>
+                    <li key={name} className="hover:text-text-200 hover:text-3xl">
 
                         <Link
                             className="font-museoModerno"

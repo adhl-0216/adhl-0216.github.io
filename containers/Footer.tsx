@@ -14,7 +14,7 @@ export default function Footer() {
                     <IconButtons />
                 </div>
 
-                <div className="col-start-3 row-start-1 row-span-2 text-xl flex flex-col justify-center items-center lg:col-start-3 lg:row-span-1 ">
+                <div className="col-start-3 row-start-1 row-span-2 text-lg flex flex-col justify-center items-center lg:col-start-3 lg:row-span-1 ">
                     <NavItems />
                 </div>
             </div>

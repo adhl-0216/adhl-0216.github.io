@@ -23,7 +23,7 @@ export default function IntroContainer() {
                     <IconButtons />
                     <div className="flex flex-col gap-4 lg:flex-row">
                         <Button href="#contact-container">Contact Me</Button>
-                        <Button >Download CV</Button>
+                        <Button href="https://1drv.ms/f/s!Al2sgXkqv7tqpBOT4k3o0uNZ0UfE?e=P9AiM7" >View CV</Button>
                     </div>
                 </div>
             </div>

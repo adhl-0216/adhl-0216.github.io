@@ -1,35 +1,47 @@
-'use client'
-import React, { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
+'use client';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
+import Modal from "@/components/Modal";
 
 export default function ContactContainer() {
     const form = useRef<HTMLFormElement | null>(null);
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (form.current) {
-            // emailjs.sendForm(
-            //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-            //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-            //     form.current,
-            //     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            // )
-            //     .then(
-            //         (result) => {
-            //             console.log('Email sent successfully!', result.text);
-            //             alert('Message sent successfully!');
-            //         },
-            //         (error) => {
-            //             console.log('Failed to send email:', error.text);
-            //             alert('Failed to send message. Please try again.');
-            //         }
-            //     );
-            console.log(form.current)
+            const formData = new FormData(form.current);
+            console.log(formData)
+            const user_email = formData.get('user_email') as string;
+            const subject = formData.get('subject') as string;
+            const message = formData.get('message') as string;
+
+            emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+
+            emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, {
+                from_email: user_email,
+                subject: subject,
+                message: message,
+            })
+                .then(() => {
+                    setModalMessage('Message sent successfully!');
+                    setModalVisible(true);
+                    form.current!.reset()
+                })
+                .catch(() => {
+                    setModalMessage('Failed to send message. Please try again.');
+                    setModalVisible(true);
+                });
         }
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
     };
 
     return (
@@ -41,19 +53,23 @@ export default function ContactContainer() {
                     placeholder="stranger@mail.com"
                     name="user_email"
                     type="email"
+                    required
                 />
                 <Input
                     label="Subject"
                     placeholder="Collaboration Opportunity"
                     name="subject"
+                    required
                 />
                 <TextArea
                     label="Message"
                     placeholder="Dear Adrian, ..."
                     name="message"
+                    required
                 />
                 <Button type="submit">Send</Button>
             </form>
+            {modalVisible && <Modal message={modalMessage} onClose={closeModal} />}
         </section>
     );
 }

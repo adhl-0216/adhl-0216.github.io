@@ -16,22 +16,22 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "ADHL - Adrian Han Lim Oah",
+  title: "ADHL - Portfolio",
   description: "Explore my professional portfolio showcasing skills, projects, and experiences in Software Development, Cybersecurity, and DevOps.",
-  keywords: "Adrian Han Lim Oah, portfolio, software development, cybersecurity, full-stack developer, projects, experience, devops",
+  keywords: "Adrian Han-Lim Oah, ADHL, portfolio, software development, cybersecurity, full-stack developer, projects, experience, devops",
   icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
-    title: "ADHL - Adrian Han Lim Oah",
+    title: "ADHL - Portfolio",
     description: "Discover my professional portfolio. Explore projects, experiences, and skills in software development and cybersecurity.",
-    url: "https://adhl-0216.github.io",
+    url: "https://adhl-dev.vercel.app",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Adrian Han Lim Oah Portfolio",
+        alt: "Adrian Han-Lim Oah Portfolio",
       },
     ],
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://adhl-0216.github.io",
+    canonical: "https://adhl-dev.vercel.app",
   }
 };
 

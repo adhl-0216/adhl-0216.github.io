@@ -12,7 +12,8 @@ import { faJava } from '@fortawesome/free-brands-svg-icons'
 function ProjectsContainer() {
     const [projects] = useState([
         {
-            title: "CAQES (Centralised Automated Quarantine & Endpoint Segmentation)",
+            title: "CAQES",
+            subtitle: "Centralised Automated Quarantine & Endpoint Segmentation",
             description: "Automated Internet of Things (IoT) network segmentation tool for smart homes. Developed to improve network security by integrating with Snort, an open-source IDS. CAQES is designed to segment and secure IoT devices automatically using Python, Open vSwitch, and syslog-ng.",
             tech: [
                 {
@@ -38,7 +39,8 @@ function ProjectsContainer() {
             ]
         },
         {
-            title: "Sblitz – Split Your Bill With Ease",
+            title: "Sblitz",
+            subtitle: "Split Your Bill With Ease",
             description: "A user-friendly application enabling users to split bills with friends and family. Features a reactive frontend built with Next.js and a robust backend microservices architecture deployed on Kubernetes. Offers seamless interaction via a microservices structure using Express.js and Spring Boot with Nginx as the ingress controller.",
             tech: [
                 {
@@ -70,6 +72,7 @@ function ProjectsContainer() {
         },
         {
             title: "VendorVerse",
+            subtitle: "Venue Booking System with Role-Based Access Control",
             description: "Led a team of 6 in software quality assurance at JRI-America. Contributed across DBA, infrastructure, design, and project management. Implemented a CI/CD pipeline with GitHub Actions, cutting time-to-deploy by 80%. Developed using Flask, with Firebase Authentication and Firestore for cloud-based identity management and database solutions.",
             tech: [
                 {
@@ -100,7 +103,8 @@ function ProjectsContainer() {
             ]
         },
         {
-            title: "NBA Fantasy League Season Scheduling System",
+            title: "NBA Fantasy Scheduler",
+            subtitle: "Basketball League Season Game Scheduling System",
             description: "Developed a fantasy league scheduling system for 10 teams, ensuring 3 games against each team. The system provides post-season standings analysis. Built with C# and Oracle SQL Server, it automates scheduling and supports advanced statistical analysis for fantasy league enthusiasts.",
             tech: [
                 {
@@ -120,11 +124,12 @@ function ProjectsContainer() {
         <section id="projects-container" className="min-h-[50dvh] flex flex-col pt-32 mb-4">
             <h2 className='text-4xl font-semibold mb-8'>My Projects</h2>
             <div className='flex flex-col lg:grid lg:grid-cols-2 rounded-2xl gap-4'>
-                {projects.map(({ title, description, tech }, index) => {
+                {projects.map(({ title, subtitle, description, tech }, index) => {
                     return (
                         <div key={index} className='flex flex-col bg-secondary-800 p-4 rounded-lg'>
-                            <span className='text-2xl font-bold text-nowrap overflow-x-auto h-16'>{title}</span>
-                            <span className='text-lg h-70 lg:h-56 overflow-y-auto bg-secondary-200 text-secondary-700 p-3 rounded-md'>{description}</span>
+                            <span className='text-lg lg:text-2xl font-bold'>{title}</span>
+                            <span className='text-md lg:text-lg text-secondary-100 font-semibold italic '>{subtitle}</span>
+                            <span className='text-lg h-70 lg:h-56 overflow-y-auto bg-secondary-200 text-secondary-700 p-3 rounded-md mt-4'>{description}</span>
                             <ul className='flex mt-2 gap-2 flex-wrap justify-center py-2'>
                                 {tech.map(({ name, url, icon }, index) => {
                                     return (

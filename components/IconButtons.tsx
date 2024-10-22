@@ -11,10 +11,10 @@ const icons = [
 
 export function IconButtons() {
     return (
-        <div className="flex flex-wrap fill-primary-300 gap-4">
+        <div className="flex flex-wrap fill-primary-300 gap-2 lg:gap-4">
             {icons.map(({ ariaLabel, icon, url, title }, index) => (
                 <Link href={url} aria-label={ariaLabel} key={index} title={title} target="_blank">
-                    <FontAwesomeIcon icon={icon} className="h-8 w-8 lg:h-12 lg:w-12" />
+                    <FontAwesomeIcon icon={icon} className="h-10 w-10 lg:h-12 lg:w-12" />
                 </Link>
             ))}
         </div>

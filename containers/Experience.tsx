@@ -1,5 +1,6 @@
 import jriLogo from "@/public/jri-america.jpg"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ExperienceContainer() {
     return (
@@ -9,7 +10,18 @@ export default function ExperienceContainer() {
                 <span className="text-nowrap font-bold text-xl mb-2 rounded-full bg-primary-400 px-3">Jan 2024 - Aug 2024</span>
                 <div className="flex flex-col lg:flex-row gap-4">
                     <div className="flex justify-center bg-white rounded-xl min-h-28 lg:w-80">
-                        <Image src={jriLogo} alt="JRI-America" width={256} className="object-contain" ></Image>
+                        <Link
+                            href="https://www.linkedin.com/company/jri/posts/?feedView=all"
+                            title="JRI-America LinkedIn"
+                            className="flex items-center"
+                            target="_blank">
+
+                            <Image
+                                src={jriLogo}
+                                alt="JRI-America"
+                                width={208}
+                                className="object-contain" ></Image>
+                        </Link>
                     </div>
                     <div>
                         <span className="font-bold text-2xl text-wrap">JRI-America, a subsidiary of <div className="italic">Sumitomo Mitsui Banking Corporation (SMBC)</div></span>

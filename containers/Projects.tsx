@@ -123,8 +123,8 @@ function ProjectsContainer() {
                 {projects.map(({ title, description, tech }, index) => {
                     return (
                         <div key={index} className='flex flex-col bg-secondary-800 p-4 rounded-lg'>
-                            <span className='text-2xl font-bold text-nowrap overflow-x-scroll'>{title}</span>
-                            <span className='text-lg h-70 lg:h-36 overflow-y-scroll bg-secondary-200 text-secondary-700 p-3 rounded-md'>{description}</span>
+                            <span className='text-2xl font-bold text-nowrap overflow-x-auto h-16'>{title}</span>
+                            <span className='text-lg h-70 lg:h-56 overflow-y-auto bg-secondary-200 text-secondary-700 p-3 rounded-md'>{description}</span>
                             <ul className='flex mt-2 gap-2 flex-wrap justify-center py-2'>
                                 {tech.map(({ name, url, icon }, index) => {
                                     return (

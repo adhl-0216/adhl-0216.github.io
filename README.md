@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adhl's Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website, showcasing my journey, skills, and projects! This site is built with modern web technologies to provide a fast, responsive, and user-friendly experience.
 
-First, run the development server:
+**[Visit the live site](https://adhl-0216.vercel.app)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio is a single-page application crafted with **NextJS**, styled using **Tailwind CSS** for a sleek and responsive design. It’s hosted on Vercel and features five main sections:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **About**: A snapshot of who I am and what drives me.
+- **Experience**: Highlights of my professional background and roles.
+- **Education**: My academic journey and qualifications.
+- **Projects**: A showcase of my latest work, periodically updated with fresh content.
+- **Contact**: A form to get in touch with me directly via email.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens thanks to Tailwind CSS.
+- **Fast & Performant**: Powered by NextJS with server-side rendering (SSR) and static site generation (SSG) capabilities.
+- **Dynamic Projects**: The Projects section is updated periodically with the latest changes from Markdown files hosted in a separate GitHub repository.
+- **Contact Form**: Submit a message through the form, and it’ll send an email directly to me.
+- **Clean UI**: Minimalist and modern styling for a professional look.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **NextJS**: React framework for SSR, SSG, and a smooth development experience.
+- **Tailwind CSS**: Utility-first CSS framework for rapid, responsive styling.
+- **Vercel**: Hosting platform for seamless deployment and scalability.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Setup & Installation
 
-## Deploy on Vercel
+Want to run this locally or contribute? Here’s how:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repo**:
+   ```bash
+   git clone https://github.com/adhl-0216/adhl-0216.github.io.git
+   cd adhl-0216.github.io
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run locally**:
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` in your browser.
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+   Deploy to Vercel or export static files with `npm run export` if needed.
+
+## Project Updates
+
+The **Projects** section is designed to stay current. It pulls content periodically from Markdown files hosted in a separate GitHub repository and regenerates using NextJS’s Incremental Static Regeneration (ISR). Check back often to see my latest work!
+
+## Contact Me
+
+Have a question or just want to say hi? Use the **Contact** section on the site. The form sends an email directly to me—no middleman, just us connecting!
+
+## Contributing
+
+Suggestions or improvements? Feel free to open an issue or submit a pull request. I’d love to hear your feedback!
+
+## License
+
+This project is open-source under the [MIT License](LICENSE). Feel free to use it as inspiration for your own portfolio.

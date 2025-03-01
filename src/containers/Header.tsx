@@ -1,6 +1,6 @@
 "use client";
-import Logo from "@/components/Logo";
-import NavItems from "@/components/NavItems";
+import Logo from "@/src/components/Logo";
+import NavItems from "@/src/components/NavItems";
 import { useRef, useState, useEffect } from "react";
 
 export default function Header() {

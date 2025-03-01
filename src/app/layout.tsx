@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/containers/Header";
-import Footer from "@/containers/Footer";
+import Header from "@/src/containers/Header";
+import Footer from "@/src/containers/Footer";
 
 import { MuseoModerno, Cairo } from 'next/font/google';
 
@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-  viewport: "width=device-width, initial-scale=1.0",
   robots: {
     index: true,
     follow: true,
@@ -45,6 +44,8 @@ export const metadata: Metadata = {
     canonical: "https://adhl-dev.vercel.app",
   }
 };
+
+export const viewport = "width=device-width, initial-scale=1.0"
 
 export default function RootLayout({
   children,

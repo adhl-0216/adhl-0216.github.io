@@ -1,10 +1,10 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Button from "@/components/Button";
-import Input from "@/components/Input";
-import TextArea from "@/components/TextArea";
-import Modal from "@/components/Modal";
+import Button from "@/src/components/Button";
+import Input from "@/src/components/Input";
+import TextArea from "@/src/components/TextArea";
+import Modal from "@/src/components/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 

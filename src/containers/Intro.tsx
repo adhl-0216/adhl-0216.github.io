@@ -1,7 +1,7 @@
-import Button from "@/components/Button";
+import Button from "@/src/components/Button";
 import Image from "next/image";
 import Illustration from "@/public/intro-illustration.svg"
-import { IconButtons } from "@/components/IconButtons";
+import { IconButtons } from "@/src/components/IconButtons";
 
 export default function IntroContainer() {
     return (

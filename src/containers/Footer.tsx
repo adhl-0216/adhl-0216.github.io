@@ -1,6 +1,6 @@
-import { IconButtons } from "@/components/IconButtons";
-import Logo from "@/components/Logo"
-import NavItems from "@/components/NavItems";
+import { IconButtons } from "@/src/components/IconButtons";
+import Logo from "@/src/components/Logo"
+import NavItems from "@/src/components/NavItems";
 
 
 export default function Footer() {

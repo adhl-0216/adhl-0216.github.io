@@ -3,9 +3,9 @@ import Image from "next/image";
 import Illustration from "@/public/intro-illustration.svg"
 import { IconButtons } from "@/src/components/IconButtons";
 
-export default function IntroContainer() {
+export default function AboutSection() {
     return (
-        <section className="flex flex-col lg:flex-row-reverse gap-4 py-16 lg:pt-32 mt-20 lg:mt-8 lg:items-center" id="intro-container">
+        <section className="flex flex-col lg:flex-row-reverse gap-4 py-16 lg:pt-32 lg:mt-8 lg:items-center lg:h-screen" id="intro-container">
             <div className="min-w-80 min-h-80 flex items-end ">
                 <Image src={Illustration} alt="illustration" className="object-contain" priority />
             </div>

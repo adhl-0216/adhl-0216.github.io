@@ -9,7 +9,7 @@ import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import { faJava } from '@fortawesome/free-brands-svg-icons'
 
-function ProjectsContainer() {
+function ProjectsSection() {
     const [projects] = useState([
         {
             title: "CAQES",
@@ -127,7 +127,7 @@ function ProjectsContainer() {
                 {projects.map(({ title, subtitle, description, tech }, index) => {
                     return (
                         <div key={index} className='flex flex-col bg-secondary-800 p-4 rounded-lg'>
-                            <span className='text-lg lg:text-2xl font-bold'>{title}</span>
+                            <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`} className='text-lg lg:text-2xl font-bold'>{title}</a>
                             <span className='text-md lg:text-lg text-secondary-100 font-semibold italic '>{subtitle}</span>
                             <span className='text-lg h-70 lg:h-56 overflow-y-auto bg-secondary-200 text-secondary-700 p-3 rounded-md mt-4'>{description}</span>
                             <ul className='flex mt-2 gap-2 flex-wrap justify-center py-2'>
@@ -155,4 +155,4 @@ function ProjectsContainer() {
     )
 }
 
-export default ProjectsContainer
+export default ProjectsSection

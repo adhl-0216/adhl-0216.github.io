@@ -69,45 +69,44 @@ export default function Header() {
     });
 
     return (
-        <header>
-            <nav>
-                <div
-                    ref={headerRef}
-                    className={`fixed w-full flex flex-wrap lg:flex-nowrap justify-between items-center px-6 lg:px-8 py-6 bg-primary-950 text-primary-100 transition-transform duration-500 ease-in-out ${showHeader ? "translate-y-0" : "-translate-y-full"
-                        }`}
+        <nav>
+            <div
+                ref={headerRef}
+                className={`w-full flex flex-wrap lg:flex-nowrap justify-between items-center px-6 lg:px-8 py-6 bg-primary-950 text-primary-100 fixed top-0 left-0 right-0 transform transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"
+                    }`}
+            >
+                <Logo />
+                <button
+                    onClick={toggleNavItems}
+                    type="button"
+                    className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-expanded="false"
                 >
-                    <Logo />
-                    <button
-                        onClick={toggleNavItems}
-                        type="button"
-                        className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-expanded="false"
+                    <svg
+                        className="w-24 h-24"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 14"
                     >
-                        <svg
-                            className="w-24 h-24"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 17 14"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M1 1h15M1 7h15M1 13h15"
-                            />
-                        </svg>
-                    </button>
-                    <div
-                        ref={navItemsRef}
-                        className="hidden w-full lg:block lg:w-auto"
-                        id="navbar-default"
-                    >
-                        <NavItems className="flex flex-col lg:flex-row mt-6 lg:mt-0 p-2 rounded-md gap-8 text-2xl " />
-                    </div>
+                        <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </button>
+                <div
+                    ref={navItemsRef}
+                    className="hidden w-full lg:block lg:w-auto"
+                    id="navbar-default"
+                >
+                    <NavItems className="flex flex-col lg:flex-row mt-6 lg:mt-0 p-2 rounded-md gap-8 text-2xl " />
                 </div>
-            </nav>
-        </header>
+            </div>
+            <div className="h-24"></div>
+        </nav>
     );
 }

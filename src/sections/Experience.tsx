@@ -2,7 +2,7 @@ import jriLogo from "@/public/jri-america.jpg"
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ExperienceContainer() {
+export default function ExperienceSection() {
     return (
         <section id="experience-container" className="min-h-[50dvh] pt-32 mb-4">
             <h2 className="text-4xl mb-4 font-semibold">My Experience</h2>

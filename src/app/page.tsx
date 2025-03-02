@@ -1,17 +1,17 @@
-import ContactContainer from "@/src/containers/Contact";
-import EducationContainer from "@/src/containers/Education";
-import ExperienceContainer from "@/src/containers/Experience";
-import IntroContainer from "@/src/containers/Intro";
-import ProjectsContainer from "@/src/containers/Projects";
+import ContactSection from "@/src/sections/Contact";
+import EducationContainer from "@/src/sections/Education";
+import ExperienceSection from "@/src/sections/Experience";
+import AboutSection from "@/src/sections/About";
+import ProjectsSection from "@/src/sections/Projects";
 
 function Home() {
   return (
     <>
-      <IntroContainer />
-      <ExperienceContainer />
+      <AboutSection />
+      <ExperienceSection />
       <EducationContainer />
-      <ProjectsContainer />
-      <ContactContainer />
+      <ProjectsSection />
+      <ContactSection />
     </>
   );
 }

@@ -9,23 +9,23 @@ export default function NavItems({ className }: Props) {
     const navLinks = [
         {
             name: 'About',
-            href: '#header'
+            href: '/#header'
         },
         {
             name: 'Experience',
-            href: '#experience-container'
+            href: '/#experience-container'
         },
         {
             name: 'Education',
-            href: '#education-container'
+            href: '/#education-container'
         },
         {
             name: 'Projects',
-            href: '#projects-container'
+            href: '/#projects-container'
         },
         {
             name: 'Contact',
-            href: '#contact-container'
+            href: '/#contact-container'
         }
     ]
     return (

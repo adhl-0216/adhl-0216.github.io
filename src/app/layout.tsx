@@ -16,6 +16,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adhl-dev.vercel.app'),
   title: "ADHL - Portfolio",
   description: "Explore my professional portfolio showcasing skills, projects, and experiences in Software Development, Cybersecurity, and DevOps.",
   keywords: "Adrian Han-Lim Oah, ADHL, portfolio, software development, cybersecurity, full-stack developer, projects, experience, devops",

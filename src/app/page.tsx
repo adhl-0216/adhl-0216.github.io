@@ -4,7 +4,7 @@ import ExperienceSection from "@/src/sections/Experience";
 import AboutSection from "@/src/sections/About";
 import ProjectsSection from "@/src/sections/Projects";
 
-function Home() {
+export default function Home() {
   return (
     <>
       <AboutSection />
@@ -15,5 +15,3 @@ function Home() {
     </>
   );
 }
-
-export default Home

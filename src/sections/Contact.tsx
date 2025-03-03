@@ -52,9 +52,9 @@ export default function ContactSection() {
     };
 
     return (
-        <section className="flex justify-center items-center min-h-dvh py-4" id="contact-container">
+        <section id="contact" className="flex justify-center items-center md:h-[60dvh]" >
             <form ref={form} onSubmit={handleSubmit} className="gap-4 flex flex-col">
-                <h2 className="text-4xl lg:text-5xl font-bold leading-10">Contact Me For Anything!</h2>
+                <h2 className="text-4xl md:text-5xl font-bold leading-10">Contact Me For Anything!</h2>
                 <Input
                     label="Email"
                     placeholder="stranger@mail.com"

@@ -72,14 +72,14 @@ export default function Header() {
         <nav>
             <div
                 ref={headerRef}
-                className={`w-full flex flex-wrap lg:flex-nowrap justify-between items-center px-6 lg:px-8 py-6 bg-primary-950 text-primary-100 fixed top-0 left-0 right-0 transform transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"
+                className={`w-full flex flex-wrap md:flex-nowrap justify-between items-center px-6 py-4 md:px-8 md:py-6 bg-primary-950 text-primary-100 fixed top-0 left-0 right-0 transform transition-transform duration-300 z-50 ${showHeader ? "translate-y-0" : "-translate-y-full"
                     }`}
             >
                 <Logo />
                 <button
                     onClick={toggleNavItems}
                     type="button"
-                    className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-expanded="false"
                 >
                     <svg
@@ -100,13 +100,12 @@ export default function Header() {
                 </button>
                 <div
                     ref={navItemsRef}
-                    className="hidden w-full lg:block lg:w-auto"
+                    className="hidden w-full md:block md:w-auto"
                     id="navbar-default"
                 >
-                    <NavItems className="flex flex-col lg:flex-row mt-6 lg:mt-0 p-2 rounded-md gap-8 text-2xl " />
+                    <NavItems className="flex flex-col md:flex-row mt-6 md:mt-0 p-2 rounded-md gap-8 text-2xl " />
                 </div>
             </div>
-            <div className="h-24"></div>
         </nav>
     );
 }

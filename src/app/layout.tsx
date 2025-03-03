@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/src/sections/Header";
-import Footer from "@/src/sections/Footer";
+import Header from "@/src/components/Header";
+import Footer from "@/src/components/Footer";
 
 import { MuseoModerno, Cairo } from 'next/font/google';
 
@@ -16,6 +16,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adhl-dev.vercel.app'),
   title: "ADHL - Portfolio",
   description: "Explore my professional portfolio showcasing skills, projects, and experiences in Software Development, Cybersecurity, and DevOps.",
   keywords: "Adrian Han-Lim Oah, ADHL, portfolio, software development, cybersecurity, full-stack developer, projects, experience, devops",
@@ -61,7 +62,7 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main className="px-12 lg:px-32">
+        <main className="px-12 md:px-64 md:gap-56">
           {children}
         </main>
         <footer>

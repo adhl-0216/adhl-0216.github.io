@@ -8,10 +8,10 @@ export default function ExperienceSection() {
     const [isCollapsed, setIsCollapsed] = useState(true);
 
     return (
-        <section id="experience-container" className="min-h-[50dvh] my-12 lg:px-40">
+        <section id="experience" className="md:h-[50dvh]">
             <h2 className="text-4xl mb-4 font-semibold">My Experience</h2>
-            <div className="flex flex-col bg-primary-700 p-5 rounded-2xl lg:flex-row gap-2 lg:gap-8">
-                <div className="flex justify-center bg-white rounded-xl min-h-28 lg:w-80">
+            <div className="flex flex-col bg-primary-700 p-5 rounded-2xl md:flex-row gap-2 md:gap-8">
+                <div className="flex justify-center bg-white rounded-xl min-h-28 md:w-80">
                     <Link
                         href="https://www.linkedin.com/company/jri/posts/?feedView=all"
                         title="JRI-America LinkedIn"
@@ -26,20 +26,20 @@ export default function ExperienceSection() {
                     </Link>
                 </div>
                 <div className="flex flex-col flex-grow">
-                    <div className="flex flex-col-reverse lg:flex-row justify-between">
+                    <div className="flex flex-col-reverse md:flex-row justify-between">
                         <div>
-                            <span className="font-bold text-lg lg:text-xl">JRI-America, a subsidiary of <span className="text-primary-400 italic">Sumitomo Mitsui Banking Corporation (SMBC)</span></span>
-                            <p className="text-md lg:text-xl font-bold text-text-200 mb-4 font-">SOC Automation & Cyber Monitoring Response Intern</p>
+                            <span className="font-bold text-lg md:text-xl">JRI-America, a subsidiary of <span className="text-primary-400 italic">Sumitomo Mitsui Banking Corporation (SMBC)</span></span>
+                            <p className="text-md md:text-xl font-bold text-text-200 mb-4 font-">SOC Automation & Cyber Monitoring Response Intern</p>
                         </div>
                         <span className="text-nowrap font-bold text-xl mb-4 underline">Jan 2024 - Aug 2024</span>
                     </div>
                     <div className="tags"></div>
                     <button
                         onClick={() => setIsCollapsed(!isCollapsed)}
-                        className="lg:hidden text-sm underline mb-2 text-start">
+                        className="md:hidden text-sm underline mb-2 text-start">
                         {isCollapsed ? 'Show more' : 'Show less'}
                     </button>
-                    <ul className={`italic text-xs lg:text-base ${isCollapsed ? 'hidden lg:block' : 'block'}`}>
+                    <ul className={`italic text-xs md:text-base ${isCollapsed ? 'hidden md:block' : 'block'}`}>
                         <li>
                             ✔️ Triaged and resolved <span className="animated-gradient">200+</span> security alerts for Cyber Monitoring Response Team
                         </li>

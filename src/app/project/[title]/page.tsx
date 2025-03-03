@@ -143,7 +143,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     const title = (await params).title;
     const { content, frontmatter } = await fetchProjectMarkdown(title);
 
-    const sanitizedHtml = DOMPurify(new JSDOM('<!DOCTYPE html>').window).sanitize(content);
+    const window = new JSDOM('<!DOCTYPE html>').window;
+    const purify = DOMPurify(window);
+    const sanitizedHtml = purify.sanitize(content);
 
     return (
         <div className="container mx-auto p-4">

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,6 +10,16 @@ interface CarouselProps {
 export default function InfiniteCarousel({ items }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const getCardStyle = (idx: number) => {
         const position = idx - currentIndex;
@@ -31,7 +41,6 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
         }
 
         // Adjacent and current cards
-        const isMobile = window.innerWidth < 768;
         const x = adjustedPosition * (isMobile ? 100 : 25);
         const z = adjustedPosition === 0 ? 0 : -100;
         const scale = adjustedPosition === 0 ? 1 : 0.8;

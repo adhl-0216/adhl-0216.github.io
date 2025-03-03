@@ -11,7 +11,7 @@ const icons = [
 
 export function IconButtons() {
     return (
-        <div className="flex flex-wrap fill-primary-300 gap-1 lg:gap-2">
+        <div className="flex flex-wrap fill-primary-300 gap-1 md:gap-2">
             {icons.map(({ ariaLabel, icon, url, title }, index) => (
                 <Link href={url} aria-label={ariaLabel} key={index} title={title} target="_blank">
                     <FontAwesomeIcon icon={icon} size="2x" />

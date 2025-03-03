@@ -61,7 +61,7 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main className="px-12 lg:px-32">
+        <main className="px-12 md:px-64 md:gap-56">
           {children}
         </main>
         <footer>

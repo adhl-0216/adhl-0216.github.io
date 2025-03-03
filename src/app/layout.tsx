@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/src/containers/Header";
-import Footer from "@/src/containers/Footer";
+import Header from "@/src/sections/Header";
+import Footer from "@/src/sections/Footer";
 
 import { MuseoModerno, Cairo } from 'next/font/google';
 

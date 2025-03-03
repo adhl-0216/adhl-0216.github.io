@@ -8,7 +8,7 @@ import Modal from "@/src/components/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-export default function ContactContainer() {
+export default function ContactSection() {
     const form = useRef<HTMLFormElement | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
     const [modalMessage, setModalMessage] = useState('');

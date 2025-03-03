@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import InfiniteCarousel from '@/src/components/InfiniteCarousel'
 import { faPython, faReact } from '@fortawesome/free-brands-svg-icons'
 import { faBootstrap } from '@fortawesome/free-brands-svg-icons'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +10,7 @@ import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import { faJava } from '@fortawesome/free-brands-svg-icons'
 
-function ProjectsContainer() {
+function ProjectsSection() {
     const [projects] = useState([
         {
             title: "CAQES",
@@ -120,39 +121,46 @@ function ProjectsContainer() {
             ]
         }
     ])
-    return (
-        <section id="projects-container" className="min-h-[50dvh] flex flex-col pt-32 mb-4">
-            <h2 className='text-4xl font-semibold mb-8'>My Projects</h2>
-            <div className='flex flex-col lg:grid lg:grid-cols-2 rounded-2xl gap-4'>
-                {projects.map(({ title, subtitle, description, tech }, index) => {
-                    return (
-                        <div key={index} className='flex flex-col bg-secondary-800 p-4 rounded-lg'>
-                            <span className='text-lg lg:text-2xl font-bold'>{title}</span>
-                            <span className='text-md lg:text-lg text-secondary-100 font-semibold italic '>{subtitle}</span>
-                            <span className='text-lg h-70 lg:h-56 overflow-y-auto bg-secondary-200 text-secondary-700 p-3 rounded-md mt-4'>{description}</span>
-                            <ul className='flex mt-2 gap-2 flex-wrap justify-center py-2'>
-                                {tech.map(({ name, url, icon }, index) => {
-                                    return (
-                                        <li key={index}>
-                                            <Link href={url} className='flex flex-col items-center w-24'>
-                                                <div className='flex bg-secondary-400 rounded-full p-2 justify-center items-center w-14 h-14'>
-                                                    <FontAwesomeIcon icon={icon} size='2xl' />
-                                                </div>
-                                                <div className='text-center'>
-                                                    {name}
-                                                </div>
-                                            </Link>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    )
-                })}
+    const projectCards = projects.map(({ title, subtitle, description, tech }, index) => (
+        <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-primary-900 p-4 md:p-8 rounded-lg w-full md:w-[48rem] h-auto md:h-[27rem] min-h-[280px] transition-all duration-300 group hover:scale-105"
+            data-active="false"
+        >
+            <div className="flex flex-col">
+                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`} className='text-xl md:text-2xl font-bold mb-1 text-primary-100'>{title}</a>
+                <span className='text-sm md:text-base text-text-50 font-semibold italic mb-2'>{subtitle}</span>
+                <ul className='flex gap-2 flex-wrap mt-2 md:mt-4 justify-start'>
+                    {tech.map(({ name, url, icon }, index) => (
+                        <li key={index}>
+                            <Link href={url} className='flex flex-col items-center w-12 md:w-14'>
+                                <div className='flex bg-primary-400 rounded-full p-1.5 justify-center items-center w-8 h-8 md:w-10 md:h-10'>
+                                    <FontAwesomeIcon icon={icon} size='lg' />
+                                </div>
+                                <div className='text-center text-xs md:text-xs'>
+                                    {name}
+                                </div>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <div className="flex-grow"></div>
+                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`}
+                    className='inline-flex text-center mt-4 px-4 py-2 bg-primary-400 hover:bg-primary-300 text-primary-100 rounded-lg font-semibold transition-colors duration-200 justify-center'>
+                    See more
+                </a>
             </div>
 
+            <div className='hidden md:block text-md text-wrap text-justify col-span-1 md:col-span-2 overflow-y-auto bg-primary-100 text-primary-950 p-3 rounded-md'>
+                {description}
+            </div>
+        </div>
+    ))
+
+    return (
+        <section id="projects-container" className="h-[60dvh] md:h-[100dvh] flex flex-col overflow-hidden justify-center px-2 md:px-40">
+            <h2 className='text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-start'>My Projects</h2>
+            <InfiniteCarousel items={projectCards} />
         </section>
     )
 }
 
-export default ProjectsContainer
+export default ProjectsSection

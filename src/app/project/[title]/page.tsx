@@ -73,7 +73,6 @@ async function fetchProjectMarkdown(slug: string): Promise<{ content: string; fr
                     Authorization: `token ${githubToken}`,
                     Accept: "application/vnd.github.v3+json",
                 },
-                cache: "no-store",
             }
         );
 
@@ -129,9 +128,9 @@ export async function generateStaticParams() {
     const projectSlugs = files
         .filter((file: { name: string }) => file.name.endsWith(".md"))
         .map((file: { name: string }) => ({
-            "project-title": file.name.replace(".md", ""),
+            title: file.name.replace(".md", ""),
         }));
-
+    // console.log(projectSlugs);
     return projectSlugs;
 }
 
@@ -154,5 +153,3 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
     );
 }
-
-export const revalidate = 3600;

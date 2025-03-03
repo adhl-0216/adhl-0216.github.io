@@ -31,10 +31,11 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
         }
 
         // Adjacent and current cards
-        const x = adjustedPosition * 50;
+        const isMobile = window.innerWidth < 768;
+        const x = adjustedPosition * (isMobile ? 100 : 25);
         const z = adjustedPosition === 0 ? 0 : -100;
         const scale = adjustedPosition === 0 ? 1 : 0.8;
-        const opacity = adjustedPosition === 0 ? 1 : 0.4;
+        const opacity = adjustedPosition === 0 ? 1 : isMobile ? 0.5 : 0.4;
         const zIndex = adjustedPosition === 0 ? 2 : 1;
 
         return {
@@ -61,22 +62,22 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
     };
 
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative overflow-hidden">
             <button
                 onClick={() => navigate('prev')}
                 disabled={isAnimating}
-                className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-primary-800/80 p-4 rounded-full transition-opacity duration-300 hover:bg-primary-700/80 disabled:opacity-50"
+                className="absolute flex justify-center align-center h-12 w-12 left-1 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-primary-800/80 p-4 rounded-full transition-opacity duration-300 hover:bg-primary-700/80 disabled:opacity-50"
             >
-                <FontAwesomeIcon icon={faChevronLeft} size="xl" />
+                <FontAwesomeIcon icon={faChevronLeft} size="lg" />
             </button>
             <button
                 onClick={() => navigate('next')}
                 disabled={isAnimating}
-                className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-primary-800/80 p-4 rounded-full transition-opacity duration-300 hover:bg-primary-700/80 disabled:opacity-50"
+                className="absolute flex justify-center align-center h-12 w-12 right-1 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-primary-800/80 p-4 rounded-full transition-opacity duration-300 hover:bg-primary-700/80 disabled:opacity-50"
             >
-                <FontAwesomeIcon icon={faChevronRight} size="xl" />
+                <FontAwesomeIcon icon={faChevronRight} size="lg" />
             </button>
-            <div className="relative h-[80dvh] overflow-hidden">
+            <div className="relative h-[50dvh] overflow-hidden">
                 <div
                     className="absolute left-0 top-0 w-1/4 h-full z-10 cursor-pointer"
                     onClick={() => !isAnimating && navigate('prev')}
@@ -89,11 +90,8 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
                     {items.map((item, idx) => (
                         <div
                             key={idx}
-                            className="absolute w-50 h-50 transition-all flex justify-center items-center px-8 cursor-pointer "
-                            style={{
-                                ...getCardStyle(idx),
-                                transition: isAnimating ? 'all 0.4s ease-out' : 'transform 0.3s ease-out'
-                            }}
+                            className="absolute w-[92%] md:w-50 transition-all flex justify-center items-center px-2 md:px-8"
+                            style={getCardStyle(idx)}
                         >
                             {item}
                         </div>

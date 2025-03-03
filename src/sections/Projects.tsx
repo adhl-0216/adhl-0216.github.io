@@ -122,21 +122,20 @@ function ProjectsSection() {
         }
     ])
     const projectCards = projects.map(({ title, subtitle, description, tech }, index) => (
-        <div key={index} className="grid grid-cols-3 gap-4 bg-primary-900 p-8 rounded-lg w-[48rem] h-[27rem] transition-all duration-300 group hover:scale-105"
+        <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-primary-900 p-4 md:p-8 rounded-lg w-full md:w-[48rem] h-auto md:h-[27rem] min-h-[280px] transition-all duration-300 group hover:scale-105"
             data-active="false"
         >
             <div className="flex flex-col">
-
-                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`} className='text-2xl font-bold mb-1 text-primary-100'>{title}</a>
-                <span className='text-base text-text-50 font-semibold italic mb-2'>{subtitle}</span>
-                <ul className='flex gap-2 flex-wrap mt-4'>
+                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`} className='text-xl md:text-2xl font-bold mb-1 text-primary-100'>{title}</a>
+                <span className='text-sm md:text-base text-text-50 font-semibold italic mb-2'>{subtitle}</span>
+                <ul className='flex gap-2 flex-wrap mt-2 md:mt-4 justify-start'>
                     {tech.map(({ name, url, icon }, index) => (
                         <li key={index}>
-                            <Link href={url} className='flex flex-col items-center w-14'>
-                                <div className='flex bg-primary-400 rounded-full p-1.5 justify-center items-center w-10 h-10'>
+                            <Link href={url} className='flex flex-col items-center w-12 md:w-14'>
+                                <div className='flex bg-primary-400 rounded-full p-1.5 justify-center items-center w-8 h-8 md:w-10 md:h-10'>
                                     <FontAwesomeIcon icon={icon} size='lg' />
                                 </div>
-                                <div className='text-center text-xs'>
+                                <div className='text-center text-xs md:text-xs'>
                                     {name}
                                 </div>
                             </Link>
@@ -144,19 +143,21 @@ function ProjectsSection() {
                     ))}
                 </ul>
                 <div className="flex-grow"></div>
-                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`} className='inline-flex text-center mt-auto px-4 py-2 bg-primary-400 hover:bg-primary-300 text-primary-100 rounded-lg font-semibold transition-colors duration-200'>See more</a>
-
+                <a href={`/project/${title.trim().replaceAll(' ', '-').toLowerCase()}`}
+                    className='inline-flex text-center mt-4 px-4 py-2 bg-primary-400 hover:bg-primary-300 text-primary-100 rounded-lg font-semibold transition-colors duration-200 justify-center'>
+                    See more
+                </a>
             </div>
 
-            <div className='text-md text-wrap col-span-2 overflow-y-auto bg-primary-100 text-primary-950 p-3 rounded-md'>
+            <div className='hidden md:block text-md text-wrap text-justify col-span-1 md:col-span-2 overflow-y-auto bg-primary-100 text-primary-950 p-3 rounded-md'>
                 {description}
             </div>
         </div>
     ))
 
     return (
-        <section id="projects-container" className="min-h-[50dvh] h-[80dvh] flex flex-col overflow-hidden justify-center">
-            <h2 className='text-4xl font-semibold mb-8 text-center'>My Projects</h2>
+        <section id="projects-container" className="h-[60dvh] md:h-[100dvh] flex flex-col overflow-hidden justify-center px-2 md:px-40">
+            <h2 className='text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-start'>My Projects</h2>
             <InfiniteCarousel items={projectCards} />
         </section>
     )

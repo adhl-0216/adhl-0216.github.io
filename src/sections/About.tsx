@@ -5,7 +5,7 @@ import { IconButtons } from "@/src/components/IconButtons";
 
 export default function AboutSection() {
     return (
-        <section className="flex flex-col lg:flex-row-reverse gap-4 py-16 lg:pt-32 lg:mt-8 lg:items-center lg:h-screen" id="intro-container">
+        <section className="flex flex-col lg:flex-row-reverse gap-4 lg:items-center lg:h-[100dvh] mb-16" id="intro-container">
             <div className="min-w-80 min-h-80 flex items-end ">
                 <Image src={Illustration} alt="illustration" className="object-contain" priority />
             </div>
@@ -14,10 +14,16 @@ export default function AboutSection() {
                     <p className="text-2xl lg:text-4xl">
                         Hey there 👋, my name is
                     </p>
-                    <h1 className="font-bold text-3xl lg:text-5xl text-text-500">ADRIAN HAN-LIM OAH</h1>
-                    <p className="text-xl lg:text-4xl text-justify text-wrap">
-                        Ex-Cybersecurity Analyst and final year Software Development student with a focus on <strong>Cybersecurity</strong>, <strong>DevOps</strong>, and <strong>Web Development</strong>. Always happy to connect and collaborate!
-                    </p>
+                    <h1 className="font-bold text-2xl lg:text-5xl text-text-500 lg:mb-4">ADRIAN HAN-LIM OAH</h1>
+                    <ul className="text-xl lg:text-3xl list-disc pl-6 space-y-2 mb-4">
+                        <li>Final Year Software Development Student</li>
+                        <li>Ex-Cybersecurity Analyst</li>
+                    </ul>
+                    <ul className="lg:flex mb-12 lg:gap-2">
+                        <li className="text-lg font-bold inline-block px-3 py-1 rounded-full bg-primary-100 text-primary-500 m-2 lg:m-0">Cybersecurity</li>
+                        <li className="text-lg font-bold inline-block px-3 py-1 rounded-full bg-primary-100 text-primary-500 m-2 lg:m-0">DevOps</li>
+                        <li className="text-lg font-bold inline-block px-3 py-1 rounded-full bg-primary-100 text-primary-500 m-2 lg:m-0">Web Development</li>
+                    </ul>
                 </div>
                 <div className="flex flex-col justify-start lg:justify-center gap-4">
                     <IconButtons />

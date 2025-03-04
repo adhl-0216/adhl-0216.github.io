@@ -8,7 +8,7 @@ export default function EducationContainer() {
     const [isCollapsed, setIsCollapsed] = useState(true);
 
     return (
-        <section id="education" className="md:h-[50dvh] flex flex-col">
+        <section id="education" className="flex flex-col md:h-fit md:min-h-[50dvh]">
             <h2 className="text-4xl mb-4 font-semibold">My Education</h2>
             <div className="flex flex-col md:flex-row rounded-2xl bg-primary-500 p-6 gap-8">
                 <div className="flex justify-center bg-white rounded-xl min-h-28 md:w-80" >

@@ -29,8 +29,8 @@ export default async function ProjectsSection() {
     const projects = await fetchProjects();
 
     return (
-        <section id="projects" className="h-[100dvh] flex flex-col overflow-hidden justify-center">
-            <h2 className='text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-start'>My Projects</h2>
+        <section id="projects" className="h-full flex flex-col overflow-hidden justify-center px-0 bg-primary-400">
+            <h2 className='text-3xl font-semibold text-center md:text-4xl'>My Projects</h2>
             <ProjectsCarousel projects={projects} />
         </section>
     )

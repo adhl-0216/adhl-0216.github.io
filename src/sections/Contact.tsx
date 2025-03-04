@@ -52,7 +52,7 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="flex justify-center items-center md:h-[60dvh]" >
+        <section id="contact" className="flex justify-center items-center md:h-fit" >
             <form ref={form} onSubmit={handleSubmit} className="gap-4 flex flex-col">
                 <h2 className="text-4xl md:text-5xl font-bold leading-10">Contact Me For Anything!</h2>
                 <Input

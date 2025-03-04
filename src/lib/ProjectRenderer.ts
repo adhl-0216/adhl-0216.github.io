@@ -4,12 +4,12 @@ import { Tokens, Renderer, Parser } from "marked";
 export default class ProjectsRenderer extends Renderer {
     heading = ({ text, depth }: Tokens.Heading) => {
         const classes = {
-            1: 'text-5xl font-bold mb-6',
-            2: 'text-4xl font-semibold mb-4',
-            3: 'text-3xl font-semibold mb-3',
-            4: 'text-2xl font-medium mb-2',
-            5: 'text-xl font-medium mb-2',
-            6: 'text-lg font-medium mb-2',
+            1: 'text-4xl md:text-5xl font-bold mb-6',
+            2: 'text-3xl md:text-4xl font-semibold mb-4',
+            3: 'text-3l md:text-3xl font-semibold mb-3',
+            4: 'text-xl md:text-2xl font-medium mb-2',
+            5: 'text-lg md:text-xl font-medium mb-2',
+            6: 'text-md md:text-lg font-medium mb-2',
         }[depth] || '';
         return `<h${depth} class="${classes}">${text}</h${depth}>`;
     };
@@ -32,7 +32,7 @@ export default class ProjectsRenderer extends Renderer {
     list = ({ items, ordered }: Tokens.List) => {
         const type = ordered ? 'ol' : 'ul';
         const listItems = items.map((item) => this.listitem(item)).join('');
-        return `<${type} class="list-${ordered ? 'decimal' : 'disc'} ml-6 mb-4 bg-primary-50 rounded-xl p-4 text-accent-950">${listItems}</${type}>`;
+        return `<${type} class="list-${ordered ? 'decimal' : 'disc'} mb-4 bg-primary-50 rounded-xl p-4 text-accent-950">${listItems}</${type}>`;
     };
 
     listitem = ({ tokens }: Tokens.ListItem) => {

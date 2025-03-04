@@ -5,7 +5,7 @@ import NavItems from "@/src/components/NavItems";
 
 export default function Footer() {
     return (
-        <div className="flex flex-col align-end px-4 text-primary-700 fill-primary-700">
+        <div className="flex flex-col w-full px-4 text-primary-700 fill-primary-700">
             <div className="grid grid-cols-2 grid-rows-2 px-8 md:grid-cols-3 md:grid-rows-1 items-center">
                 <div className="row-span-1  md:flex md:justify-center md:col-start-2 ">
                     <Logo />

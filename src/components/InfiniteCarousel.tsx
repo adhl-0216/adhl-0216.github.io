@@ -86,7 +86,8 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
             >
                 <FontAwesomeIcon icon={faChevronRight} size="lg" />
             </button>
-            <div className="relative h-[50dvh] overflow-hidden">
+            <div className="relative">
+                <div className="w-full aspect-[3/4] md:aspect-[21/9]" />
                 <div
                     className="absolute left-0 top-0 w-1/4 h-full z-10 cursor-pointer"
                     onClick={() => !isAnimating && navigate('prev')}

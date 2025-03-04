@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
     return (
         <section className="container mx-auto py-16">
-            <h1 className="text-5xl font-bold mb-6">{frontmatter.title}</h1>
+            <h1 className="text-2xl md:text-5xl font-bold mb-6">{frontmatter.title}</h1>
             <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
         </section>
     );

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { marked } from "marked";
 import matter from "gray-matter";
 import DOMPurify from "dompurify";
@@ -6,7 +7,6 @@ import { isValidImageUrl } from "@/src/lib/imageUtils";
 import { Frontmatter } from "@/src/types/types";
 import ProjectsRenderer from "@/src/lib/ProjectRenderer";
 import { fetchGitHubDirectory, fetchGitHubFile } from "@/src/lib/github";
-
 
 async function preprocessMarkdown(markdown: string): Promise<string> {
     const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
@@ -51,6 +51,14 @@ export async function generateStaticParams() {
         .map((file: { name: string }) => ({
             title: file.name.replace(".md", ""),
         }));
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+    const title = (await params).title;
+
+    return {
+        title: `${title.toUpperCase()} - Adrian Han-Lim Oah`,
+    };
 }
 
 interface ProjectPageProps {

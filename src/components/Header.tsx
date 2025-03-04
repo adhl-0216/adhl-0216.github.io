@@ -72,8 +72,8 @@ export default function Header() {
         <nav>
             <div
                 ref={headerRef}
-                className={`w-full flex flex-wrap md:flex-nowrap justify-between items-center px-6 py-4 md:px-8 md:py-6 bg-primary-950 text-primary-100 fixed top-0 left-0 right-0 transform transition-transform duration-300 z-50 ${showHeader ? "translate-y-0" : "-translate-y-full"
-                    }`}
+                className={`fixed top-0 left-0 right-0 w-full flex flex-wrap md:flex-nowrap justify-between items-center px-6 py-4  bg-primary-950 text-primary-100  transform transition-transform duration-300 z-50 ${showHeader ? "translate-y-0" : "-translate-y-full"
+                    } md:px-8 md:py-6`}
             >
                 <Logo />
                 <button

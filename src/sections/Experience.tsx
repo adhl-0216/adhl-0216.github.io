@@ -8,7 +8,7 @@ export default function ExperienceSection() {
     const [isCollapsed, setIsCollapsed] = useState(true);
 
     return (
-        <section id="experience" className="md:h-[50dvh]">
+        <section id="experience" className="md:h-fit md:min-h-[50dvh]">
             <h2 className="text-4xl mb-4 font-semibold">My Experience</h2>
             <div className="flex flex-col bg-primary-700 p-5 rounded-2xl md:flex-row gap-2 md:gap-8">
                 <div className="flex justify-center bg-white rounded-xl min-h-28 md:w-80">
